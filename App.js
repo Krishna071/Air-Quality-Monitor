@@ -43,6 +43,8 @@ app.post("/",function(req,res){
                 const o3=pollutiondata.list[0].components.o3;
                 const so2=pollutiondata.list[0].components.so2;
 
+                res.write('   <div  style="color:black;text-align:center; background-color:white;height:100%;") no-repeat center center/cover;" >')
+
                 if(airqualityindex==1)
                 {
                      res.write("<h1>Air Quality in "+Name+", "+country+": Good</h1>"); 
@@ -61,7 +63,7 @@ app.post("/",function(req,res){
                 }
                 else
                 {
-                    res.write("<h1>Air Quality in "+Name+", "+country+": Very Poor</h1>");
+                    res.write( " <h1>Air Quality in "+Name+", "+country+": Very Poor</h1>");
                 }
 
                 res.write("<h3>Air Quality Index :"+airqualityindex+"</h3>");
@@ -73,7 +75,8 @@ app.post("/",function(req,res){
                 res.write("<h4>Nitrogen dioxide:  "+NO2+"</h4>");
                 res.write("<h4>Ozone:  "+o3+"</h4>");
                 res.write("<h4>Sulfur dioxide:  "+so2+"</h4>");
-              
+               
+               
                 res.send();
     
                 })
